@@ -1,1 +1,1 @@
-# btp-nextgen-parking
+Next generation Smart Parking solution
