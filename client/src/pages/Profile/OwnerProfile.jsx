@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   updateUserStart,
@@ -25,7 +25,22 @@ export default function OwnerProfile() {
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
   const [showListings, setShowListings] = useState(true);
-  console.log(currentUser);
+
+  useEffect(() => {
+    const accessToken = cookies.get("access_token");
+    if (!accessToken) {
+      dispatch(signOutUserSuccess());
+      navigate("/sign-in");
+    } else {
+      const tokenExpirationDate = new Date(accessToken.expires);
+      if (tokenExpirationDate < new Date()) {
+        // Removed user details from redux STORE
+        dispatch(signOutUserSuccess());
+        cookies.remove("access_token");
+        navigate("/sign-in");
+      }
+    }
+  }, []);
 
   const handleSignOut = async () => {
     try {
@@ -171,7 +186,9 @@ export default function OwnerProfile() {
               alt=""
             ></img>
           </div>
-          <h1 className="text-2xl font-semibold text-center my-7">{currentUser.name}</h1>
+          <h1 className="text-2xl font-semibold text-center my-7">
+            {currentUser.name}
+          </h1>
           <div className="flex flex-row items-center justify-center gap-4">
             <div className="flex flex-col items-start justify-center">
               {/* <span className="my-2">Name :</span> */}

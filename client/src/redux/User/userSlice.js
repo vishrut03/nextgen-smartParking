@@ -1,13 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   currentUser: null,
   error: null,
   loading: false,
+  latitude: null,
+  longitude: null,
 };
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     signInStart: (state) => {
@@ -38,6 +40,7 @@ const userSlice = createSlice({
       state.loading = true;
     },
     signOutUserSuccess: (state) => {
+      console.log("signOutUserSuccess");
       state.currentUser = null;
       state.loading = false;
       state.error = null;
@@ -45,6 +48,11 @@ const userSlice = createSlice({
     signOutUserFailure: (state, action) => {
       state.error = action.payload;
       state.loading = false;
+    },
+
+    updateCoordinates: (state, action) => {
+      state.latitude = action.payload.latitude;
+      state.longitude = action.payload.longitude;
     },
   },
 });
@@ -62,6 +70,7 @@ export const {
   signOutUserFailure,
   signOutUserSuccess,
   signOutUserStart,
+  updateCoordinates,
 } = userSlice.actions;
 
 export default userSlice.reducer;
