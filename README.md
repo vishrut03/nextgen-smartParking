@@ -1,31 +1,33 @@
-Next generation Smart Parking solution built using MERN stack and tailwind CSS aims to solve two major real life problems.
-1. Allow online and advanced booking of parking space so that when you are going to any place,you do not worry about parking your vehicle.
-2. Increase the visibility of parking lots which will result in profit maximization for the parking lot owners.
+Next Generation Smart Parking Solution
+Our solution, built using the MERN stack and Tailwind CSS, aims to solve two major real-life problems:
 
-Customers have to just provide their location access to us and we will show the customers near by available parking lots sorted by nearest distance but in order to book a parking space online user needs to first log in to our website and than choose the desired parking lot and book their parking.
+Allow online and advanced booking of parking spaces: This ensures that when you are going to any place, you do not worry about parking your vehicle.
+Increase the visibility of parking lots: This results in profit maximization for parking lot owners.
+Customers need to provide their location access to us, and we will show the nearby available parking lots sorted by nearest distance. To book a parking space online, users must first log in to our website, choose the desired parking lot, and book their parking.
 
-Detailed functioning of our website is shown below
-So we have divided the stakeholders of our website into four categories which comprises of Customers, Parking lot owners, parking lot managers and website admins. Below is the detailed description of the functionality available to each stakeholder.
+Stakeholders and Their Functionalities
+We have divided the stakeholders of our website into four categories: Customers, Parking Lot Owners, Parking Lot Managers, and Website Admins. Below is the detailed description of the functionalities available to each stakeholder.
 
-1. CUSTOMER VIEW:
- 1.1. Login/Sign Up using email verification to ensure security and smooth functioning of our website.
- 1.2. Location Access: Utilize Geolocation API for secure location access.
- 1.3. Sorting: on the basis of distance of that slot from current location.
- 1.4. Parking Spaces Options: Parking Spaces will be shown in the form Cards , each
- representing Parking Name, Parking type, Location, Charging enabled, Distance, Reserve(button).
- 1.5. User Profile: Can edit details like Vehicle No.,Name, password etc.
- 
-2. ADMIN VIEW (Company Executives):
- 2.1. Approve/Disapprove new parking space requests.
- 2.2 Remove Fraudulent Parking Space & Users.
-   
-3) Parking Owner Management Page:
- 3.1 Add Parking Space :Parking owner can send a request to admin to add a new parking Space using the CREATE LISTING functionality.
- 3.2 Manage Parking Spaces: Edit details
- 3.3 Add new Parking Manager
- 3.5 Open or close the parking slot during holidays.
-   
- 5) Parking Manager Management Page:
- 5.1 The manager will check whether the vehicle’s entry is already present or not before entering into the parking lot.
- If an entry is found then let the vehicle enter. If not then ask the user to pay the amount.
- 5.2 The manager will check whether the vehicle has any dues left or not before vehicle leaves the parking lot.
+Customer View
+Login/Sign Up: Users can log in or sign up using email verification to ensure security and smooth functioning of our website.
+Location Access: Utilize the Geolocation API for secure location access.
+Sorting: Parking spaces are sorted based on the distance from the current location.
+Parking Spaces Options: Parking spaces will be shown in the form of cards, each representing:
+Parking Name
+Parking Type
+Location
+Charging Enabled
+Distance
+Reserve (button)
+User Profile: Users can edit details like Vehicle No., Name, password, etc.
+Admin View (Company Executives)
+Approve/Disapprove New Parking Space Requests: Admins can approve or disapprove requests for new parking spaces.
+Remove Fraudulent Parking Spaces & Users: Admins can remove fraudulent parking spaces and users from the system.
+Parking Owner Management Page
+Add Parking Space: Parking owners can send a request to the admin to add a new parking space using the CREATE LISTING functionality.
+Manage Parking Spaces: Parking owners can edit the details of their parking spaces.
+Add New Parking Manager: Parking owners can add new parking managers.
+Open or Close the Parking Slot: Parking owners can open or close the parking slot during holidays.
+Parking Manager Management Page
+Check Vehicle Entry: The manager will check whether the vehicle’s entry is already present before entering the parking lot. If an entry is found, the vehicle is allowed to enter. If not, the user is asked to pay the amount.
+Check Dues Before Exit: The manager will check whether the vehicle has any dues left before the vehicle leaves the parking lot.
