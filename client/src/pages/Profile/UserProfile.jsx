@@ -9,7 +9,6 @@ import {
   signOutUserFailure,
 } from "../../redux/User/userSlice.js";
 import Cookies from "universal-cookie";
-import Header from "../../components/Header.jsx";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -39,6 +38,10 @@ export default function UserProfile() {
         navigate("/sign-in");
       }
     }
+
+    if (currentUser.role === "admin") navigate("/admin-profile");
+    else if (currentUser.role === "manager") navigate("/manager-profile");
+    else if (currentUser.role === "owner") navigate("/owner-profile");
   }, []);
   // console.log(currentUser);
 
@@ -265,12 +268,14 @@ export default function UserProfile() {
                       </div>
                     </div>
                     <div className="flex flex-col justify-between">
-                    <div className="flex flex-col justify-between sm:flex-row">
+                      <div className="flex flex-col justify-between sm:flex-row">
                         <span className="font-medium">Check Out: </span>
                         <span>{formatTime(booking.checkOut)}</span>
                       </div>
                       <div className="flex flex-col">
-                        <span className="font-medium">Parking Lot Location: </span>
+                        <span className="font-medium">
+                          Parking Lot Location:{" "}
+                        </span>
                         <span className="">{lotDetails.location}</span>
                       </div>
                     </div>
